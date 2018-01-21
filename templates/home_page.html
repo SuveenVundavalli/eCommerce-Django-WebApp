@@ -14,7 +14,14 @@
 <div class="text-center">
     <h1>{{ msg }}</h1>
 </div>
-
+{% if request.user.is_authenticated %}
+<div class="h2">Premium Content</div>
+<div class="row">
+    <div class="col">
+        {{ premium_content }}
+    </div>
+</div>
+{% endif %}
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
