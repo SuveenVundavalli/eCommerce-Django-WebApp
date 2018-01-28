@@ -1,20 +1,12 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Products List</title>
-</head>
-<body>
-<h2>Products Detail Page</h2>
-<h2>{{ product.title }}</h2>
-{{ product.description }}
-{{ product.price }}<br>
-{% if product.image.url %}
-    <img src="{{ product.image.url }}" alt="Product Image" class="img-fluid">
-{% endif %}
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <h2>Products Detail Page</h2>
+    <h2>{{ product.title }}</h2>
+    {{ product.description }}
+    {{ product.price }}<br>
+    {% if product.image.url %}
+        <img src="{{ product.image.url }}" alt="Product Image" class="img-fluid">
+    {% endif %}
 
-</body>
-</html>
+{% endblock content %}

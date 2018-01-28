@@ -1,23 +1,15 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Products List</title>
-</head>
-<body>
-<h2>Products List!</h2>
-<ol>
-    {% for product in product_list %}
-        <li>{{ product.title }}</li>
-        <ul>
-            <li>{{ product.description }}</li>
-            <li>{{ product.price }}</li>
-        </ul>
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <h2>Products List!</h2>
+    <ol>
+        {% for product in product_list %}
+            <li>{{ product.title }}</li>
+            <ul>
+                <li>{{ product.description }}</li>
+                <li>{{ product.price }}</li>
+            </ul>
 
-    {% endfor %}
-</ol>
-</body>
-</html>
+        {% endfor %}
+    </ol>
+{% endblock content %}

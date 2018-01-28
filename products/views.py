@@ -7,7 +7,7 @@ from django.http import Http404
 # Create your views here.
 class ProductFeaturedListView(ListView):
     template_name = "products/product_list.html"
-    queryset = Product.objects.featured()
+    queryset = Product.objects.all().featured()
 
     # def get_queryset(self, *args, **kwargs):
     #     request = self.request
@@ -16,7 +16,7 @@ class ProductFeaturedListView(ListView):
 
 # Create your views here.
 class ProductFeaturedDetailView(DetailView):
-    queryset = Product.objects.featured()
+    queryset = Product.objects.all().featured()
     template_name = "products/product_featured_detail.html"
 
     # def get_queryset(self, *args, **kwargs):
